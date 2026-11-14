@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqrlk2xrs6lrd"
-path="res://.godot/imported/Jump2.png-7e6d946888c95273ad26da869f31d20d.ctex"
+uid="uid://d0sqb07oi6fxg"
+path="res://.godot/imported/inferno-tileset.png-ae3c7f5e1d69594423261a7b114773e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Main/Jump2.png"
-dest_files=["res://.godot/imported/Jump2.png-7e6d946888c95273ad26da869f31d20d.ctex"]
+source_file="res://Sprites/Tiles/inferno-tileset.png"
+dest_files=["res://.godot/imported/inferno-tileset.png-ae3c7f5e1d69594423261a7b114773e9.ctex"]
 
 [params]
 
