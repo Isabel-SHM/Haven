@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq8eu48d0tsf4"
-path="res://.godot/imported/Chest Closed.png-0f585730b2af71a6af78898a321344cb.ctex"
+uid="uid://dlvssmnl8ysfe"
+path="res://.godot/imported/Attack2-1.png-97346a468333b05c5c6d270ad1f0c220.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Shop/Chest Closed.png"
-dest_files=["res://.godot/imported/Chest Closed.png-0f585730b2af71a6af78898a321344cb.ctex"]
+source_file="res://Sprites/Characters/Main/Attack2-1.png"
+dest_files=["res://.godot/imported/Attack2-1.png-97346a468333b05c5c6d270ad1f0c220.ctex"]
 
 [params]
 

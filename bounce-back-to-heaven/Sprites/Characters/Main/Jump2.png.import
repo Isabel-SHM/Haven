@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bilqweiqhogb6"
-path="res://.godot/imported/Chest Opened.png-b7b5a543dfbaf34173674c6bc33e0146.ctex"
+uid="uid://dqrlk2xrs6lrd"
+path="res://.godot/imported/Jump2.png-7e6d946888c95273ad26da869f31d20d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Shop/Chest Opened.png"
-dest_files=["res://.godot/imported/Chest Opened.png-b7b5a543dfbaf34173674c6bc33e0146.ctex"]
+source_file="res://Sprites/Characters/Main/Jump2.png"
+dest_files=["res://.godot/imported/Jump2.png-7e6d946888c95273ad26da869f31d20d.ctex"]
 
 [params]
 
