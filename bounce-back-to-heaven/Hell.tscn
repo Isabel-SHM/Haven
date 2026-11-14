@@ -1412,7 +1412,7 @@ script = ExtResource("2_xtrln")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0t50")
 animation = &"running"
-frame_progress = 0.021184636
+frame_progress = 0.4694817
 
 [node name="male" type="AnimatedSprite2D" parent="Adventurer" unique_id=1367438716]
 visible = false
@@ -1440,6 +1440,6 @@ shape = SubResource("RectangleShape2D_vm453")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=327176969]
 stream = ExtResource("16_u1y2l")
-stream_paused = true
+autoplay = true
 
 [connection signal="body_entered" from="Area" to="Area" method="_on_body_entered"]
