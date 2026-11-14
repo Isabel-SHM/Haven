@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://y4lq07qtww4g" path="res://Sprites/introbg.png" id="1_l22m0"]
 [ext_resource type="Script" uid="uid://ihjprngellhk" path="res://space.gd" id="2_03n6e"]
+[ext_resource type="AudioStream" uid="uid://oe4ssxnuasg5" path="res://music/intro.mp3" id="3_03n6e"]
 
 [node name="Node2D" type="Node2D" unique_id=1194619974]
 
@@ -30,3 +31,7 @@ text = "Press space to continue"
 script = ExtResource("2_03n6e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=127742404]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1040262673]
+stream = ExtResource("3_03n6e")
+autoplay = true
