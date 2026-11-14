@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cq6ilgthquvq4"]
 
 [ext_resource type="Texture2D" uid="uid://blykdoko3747a" path="res://Sprites/Characters/Main/Attack1-1.png" id="1_52wss"]
-[ext_resource type="Script" uid="uid://b63ikisjsapph" path="res://male_adventurer.gd" id="1_booab"]
 [ext_resource type="Texture2D" uid="uid://ba5ro5oka4bjq" path="res://Sprites/Inferno/Background.png" id="1_xtrln"]
 [ext_resource type="Texture2D" uid="uid://spixtti5du55" path="res://Sprites/Characters/Main/Attack1-2.png" id="2_cx6us"]
+[ext_resource type="Script" uid="uid://b63ikisjsapph" path="res://adventurer.gd" id="2_xtrln"]
 [ext_resource type="Texture2D" uid="uid://dmqt0ipd85j6k" path="res://Sprites/Characters/Main/Death1.png" id="3_booab"]
 [ext_resource type="Texture2D" uid="uid://c2vtyop4uiu3y" path="res://Sprites/Characters/Main/Jump1.png" id="4_xtrln"]
 [ext_resource type="Texture2D" uid="uid://bh42q7e028ci5" path="res://Sprites/Characters/Main/Run1.png" id="5_xsex7"]
@@ -13,9 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ddmpr70aurc2" path="res://Sprites/Characters/Main/Jump2.png" id="9_h4xyg"]
 [ext_resource type="Texture2D" uid="uid://ej337kw7eje4" path="res://Sprites/Characters/Main/Run2.png" id="10_e8nqa"]
 [ext_resource type="Texture2D" uid="uid://cwe2li7c4mdxg" path="res://Sprites/Inferno/inferno-tileset.png" id="13_xsex7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_semqc"]
-size = Vector2(318, 30)
+[ext_resource type="Script" uid="uid://d1wbw831x7hq0" path="res://camera.gd" id="14_xsex7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n364s"]
 atlas = ExtResource("6_dsc0r")
@@ -1384,30 +1382,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
+offset_left = -674.0
 offset_top = -90.0
-offset_right = 160.0
+offset_right = 473.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_xtrln")
+stretch_mode = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TextureRect" unique_id=306638368]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D" unique_id=1345086935]
-position = Vector2(160, 161)
-shape = SubResource("RectangleShape2D_semqc")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=128374814]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D" unique_id=495666103]
+position = Vector2(2, 0)
+build_mode = 1
+polygon = PackedVector2Array(141, 0, 139, 151, 967, 158, 967, -3)
 
 [node name="Adventurer" type="CharacterBody2D" parent="." unique_id=1081347773]
-script = ExtResource("1_booab")
+script = ExtResource("2_xtrln")
 
 [node name="female" type="AnimatedSprite2D" parent="Adventurer" unique_id=109059461]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0t50")
 animation = &"attack_2"
-frame_progress = 0.6806603
+frame_progress = 0.77026355
 
 [node name="male" type="AnimatedSprite2D" parent="Adventurer" unique_id=1367438716]
 visible = false
@@ -1421,3 +1419,6 @@ shape = SubResource("RectangleShape2D_r0t50")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1088604144]
 tile_set = SubResource("TileSet_mypsj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=128374814]
+script = ExtResource("14_xsex7")

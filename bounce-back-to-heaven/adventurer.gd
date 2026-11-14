@@ -34,8 +34,6 @@ func _physics_process(delta: float) -> void:
 		male.play("running")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	else:
-		female.stop("running")
-		male.stop("running")
+	
 
 	move_and_slide()
