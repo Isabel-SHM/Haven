@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ej337kw7eje4" path="res://Sprites/Characters/Main/Run2.png" id="10_e8nqa"]
 [ext_resource type="Texture2D" uid="uid://cwe2li7c4mdxg" path="res://Sprites/Inferno/inferno-tileset.png" id="13_xsex7"]
 [ext_resource type="Script" uid="uid://d1wbw831x7hq0" path="res://camera.gd" id="14_xsex7"]
+[ext_resource type="Script" uid="uid://dyhytu5rt5lr3" path="res://hell-exit.gd" id="15_dsc0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n364s"]
 atlas = ExtResource("6_dsc0r")
@@ -1374,6 +1375,8 @@ texture = ExtResource("13_xsex7")
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_dsc0r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm453"]
+
 [node name="Node2D" type="Node2D" unique_id=2029300073]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1606064163]
@@ -1399,13 +1402,14 @@ build_mode = 1
 polygon = PackedVector2Array(141, 0, 139, 151, 967, 158, 967, -3)
 
 [node name="Adventurer" type="CharacterBody2D" parent="." unique_id=1081347773]
+position = Vector2(-494, 28)
 script = ExtResource("2_xtrln")
 
 [node name="female" type="AnimatedSprite2D" parent="Adventurer" unique_id=109059461]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0t50")
 animation = &"running"
-frame_progress = 0.23257513
+frame_progress = 0.22641756
 
 [node name="male" type="AnimatedSprite2D" parent="Adventurer" unique_id=1367438716]
 visible = false
@@ -1422,3 +1426,13 @@ tile_set = SubResource("TileSet_mypsj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=128374814]
 script = ExtResource("14_xsex7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=897545224]
+script = ExtResource("15_dsc0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=949224095]
+position = Vector2(282, 0)
+scale = Vector2(1, 9.399999)
+shape = SubResource("RectangleShape2D_vm453")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
