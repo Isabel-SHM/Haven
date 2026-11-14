@@ -1,7 +1,8 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
+var phealth: int = 100
+var character = 0
+	
 func _ready() -> void:
 	pass # Replace with function body.
 
