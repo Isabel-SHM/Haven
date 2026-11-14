@@ -1,6 +1,8 @@
+extends Node2D
+
 var entered = false
 
-func _on_body_entered(body: Node2D):
+func _on_body_entered(body: CharacterBody2D):
 	entered = true
 
 func _process(_delta):

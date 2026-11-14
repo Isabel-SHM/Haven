@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cwe2li7c4mdxg" path="res://Sprites/Inferno/inferno-tileset.png" id="13_xsex7"]
 [ext_resource type="Script" uid="uid://d1wbw831x7hq0" path="res://camera.gd" id="14_xsex7"]
 [ext_resource type="Script" uid="uid://dyhytu5rt5lr3" path="res://hell-exit.gd" id="15_dsc0r"]
+[ext_resource type="AudioStream" uid="uid://bc2nddopegvv5" path="res://music/Hell song.mp3" id="16_u1y2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n364s"]
 atlas = ExtResource("6_dsc0r")
@@ -1376,8 +1377,10 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_dsc0r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vm453"]
+size = Vector2(31, 20)
 
 [node name="Node2D" type="Node2D" unique_id=2029300073]
+position = Vector2(-1, 0)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1606064163]
 anchors_preset = 8
@@ -1409,7 +1412,7 @@ script = ExtResource("2_xtrln")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0t50")
 animation = &"running"
-frame_progress = 0.22641756
+frame_progress = 0.021184636
 
 [node name="male" type="AnimatedSprite2D" parent="Adventurer" unique_id=1367438716]
 visible = false
@@ -1417,7 +1420,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mypsj")
 animation = &"jump"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Adventurer" unique_id=371794376]
+[node name="Collision" type="CollisionShape2D" parent="Adventurer" unique_id=371794376]
 position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_r0t50")
 
@@ -1427,12 +1430,16 @@ tile_set = SubResource("TileSet_mypsj")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=128374814]
 script = ExtResource("14_xsex7")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=897545224]
+[node name="Area" type="Area2D" parent="." unique_id=897545224]
 script = ExtResource("15_dsc0r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=949224095]
-position = Vector2(282, 0)
+[node name="Area" type="CollisionShape2D" parent="Area" unique_id=949224095]
+position = Vector2(276.5, 0)
 scale = Vector2(1, 9.399999)
 shape = SubResource("RectangleShape2D_vm453")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=327176969]
+stream = ExtResource("16_u1y2l")
+stream_paused = true
+
+[connection signal="body_entered" from="Area" to="Area" method="_on_body_entered"]

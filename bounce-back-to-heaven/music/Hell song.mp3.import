@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bc2nddopegvv5"
+path="res://.godot/imported/Hell song.mp3-569f40fe14532a0b2df2538a1e689ad8.mp3str"
+
+[deps]
+
+source_file="res://music/Hell song.mp3"
+dest_files=["res://.godot/imported/Hell song.mp3-569f40fe14532a0b2df2538a1e689ad8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

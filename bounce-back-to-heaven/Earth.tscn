@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://c2vtyop4uiu3y" path="res://Sprites/Characters/Main/Jump1.png" id="10_fysxd"]
 [ext_resource type="Texture2D" uid="uid://bh42q7e028ci5" path="res://Sprites/Characters/Main/Run1.png" id="11_wyf36"]
 [ext_resource type="Script" uid="uid://d1wbw831x7hq0" path="res://camera.gd" id="12_yoqb0"]
+[ext_resource type="Script" uid="uid://c14i1biupcb3x" path="res://color_rect.gd" id="14_cjrwn"]
+[ext_resource type="AudioStream" uid="uid://eyc333ob58p2" path="res://music/earth song.mp3" id="15_sf3od"]
+[ext_resource type="Texture2D" uid="uid://0wrt7rc3owft" path="res://Sprites/Earth/Blocks.png" id="16_34wsm"]
+[ext_resource type="Script" uid="uid://ce8xt6w1jb716" path="res://bounce.gd" id="16_qd2u2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n364s"]
 atlas = ExtResource("2_jr4wy")
@@ -626,6 +630,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ca8r"]
 size = Vector2(46, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mypsj"]
+size = Vector2(53.657913, 36.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0t50"]
+size = Vector2(62, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_semqc"]
+size = Vector2(509.5, 20)
+
 [node name="Node2D" type="Node2D" unique_id=1871361021]
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2144595507]
@@ -646,11 +659,14 @@ stretch_mode = 1
 [node name="StaticBody2D" type="StaticBody2D" parent="TextureRect2" unique_id=910515948]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect2/StaticBody2D" unique_id=355332756]
-position = Vector2(2, 0)
+position = Vector2(1.9999847, -145.6301)
+scale = Vector2(1, 1.9653414)
 build_mode = 1
-polygon = PackedVector2Array(141, 0, 139, 151, 967, 158, 967, -3)
+polygon = PackedVector2Array(141, 0, 139, 151, 963.9999, 151.41673, 967, -3)
 
 [node name="Adventurer" type="CharacterBody2D" parent="." unique_id=1968194988]
+position = Vector2(-501, 27)
+scale = Vector2(0.88, 0.88)
 script = ExtResource("1_yxb7j")
 
 [node name="female" type="AnimatedSprite2D" parent="Adventurer" unique_id=1364920933]
@@ -670,3 +686,65 @@ shape = SubResource("RectangleShape2D_0ca8r")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1663443321]
 script = ExtResource("12_yoqb0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=791877407]
+stream = ExtResource("15_sf3od")
+autoplay = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=612920514]
+position = Vector2(-28.999998, 0)
+scale = Vector2(0.76, 0.88)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1955805201]
+position = Vector2(-418.31592, 51)
+texture = ExtResource("16_34wsm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1496085883]
+position = Vector2(-152.4737, -17)
+texture = ExtResource("16_34wsm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=297307618]
+position = Vector2(131, 15)
+texture = ExtResource("16_34wsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1124370585]
+position = Vector2(-50.802628, -33.375)
+shape = SubResource("RectangleShape2D_mypsj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1999200453]
+position = Vector2(-321.99994, 35)
+shape = SubResource("RectangleShape2D_mypsj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1918915330]
+position = Vector2(225, -1)
+shape = SubResource("RectangleShape2D_mypsj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1869887210]
+position = Vector2(-427.00018, 58)
+shape = SubResource("RectangleShape2D_r0t50")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=108933768]
+position = Vector2(-160.4737, -11)
+shape = SubResource("RectangleShape2D_r0t50")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=580326281]
+position = Vector2(121, 21)
+shape = SubResource("RectangleShape2D_r0t50")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=133705958]
+script = ExtResource("16_qd2u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1621602989]
+position = Vector2(40.25, 41)
+shape = SubResource("RectangleShape2D_semqc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=284918176]
+visible = false
+offset_left = -772.0
+offset_top = -207.0
+offset_right = 474.0
+offset_bottom = 219.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("14_cjrwn")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
