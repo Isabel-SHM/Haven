@@ -1404,8 +1404,8 @@ script = ExtResource("2_xtrln")
 [node name="female" type="AnimatedSprite2D" parent="Adventurer" unique_id=109059461]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0t50")
-animation = &"attack_2"
-frame_progress = 0.77026355
+animation = &"running"
+frame_progress = 0.23257513
 
 [node name="male" type="AnimatedSprite2D" parent="Adventurer" unique_id=1367438716]
 visible = false

@@ -625,15 +625,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ca8r"]
 size = Vector2(46, 50)
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_semqc"]
-
-[sub_resource type="Sky" id="Sky_r0t50"]
-sky_material = SubResource("PanoramaSkyMaterial_semqc")
-
-[sub_resource type="Environment" id="Environment_mypsj"]
-background_mode = 2
-sky = SubResource("Sky_r0t50")
-
 [node name="Node2D" type="Node2D" unique_id=1871361021]
 
 [node name="Adventurer" type="CharacterBody2D" parent="." unique_id=1968194988]
@@ -657,5 +648,23 @@ shape = SubResource("RectangleShape2D_0ca8r")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1663443321]
 script = ExtResource("12_yoqb0")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=874571479]
-environment = SubResource("Environment_mypsj")
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2144595507]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -674.0
+offset_top = -90.0
+offset_right = 473.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect2" unique_id=910515948]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect2/StaticBody2D" unique_id=355332756]
+position = Vector2(2, 0)
+build_mode = 1
+polygon = PackedVector2Array(141, 0, 139, 151, 967, 158, 967, -3)

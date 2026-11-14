@@ -30,10 +30,17 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		female.flip_h = direction <0 
+		male.flip_h = direction <0
+		
 		female.play("running")
 		male.play("running")
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		female.stop()
+		female.frame=3
+		male.stop()
+		male.frame=4
 
 	move_and_slide()
