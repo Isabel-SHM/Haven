@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var female = $female
 
 const SPEED = 120.0
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -325.0
 
 func male_adventurer() -> void:
 	male.visible = true
@@ -44,3 +44,7 @@ func _physics_process(delta: float) -> void:
 		male.frame=4
 
 	move_and_slide()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
