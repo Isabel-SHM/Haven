@@ -49,10 +49,6 @@ region = Rect2(186, 0, 30, 28)
 atlas = ExtResource("6_dsc0r")
 region = Rect2(217, 0, 30, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wr2l4"]
-atlas = ExtResource("6_dsc0r")
-region = Rect2(248, 0, 30, 28)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tiyhx"]
 atlas = ExtResource("7_u1y2l")
 region = Rect2(2, 0, 32, 27)
@@ -187,9 +183,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hiq16")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wr2l4")
 }],
 "loop": 1,
 "name": &"attack_1",
@@ -328,14 +321,6 @@ region = Rect2(192, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_stm4w"]
 atlas = ExtResource("1_52wss")
 region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_su7oo"]
-atlas = ExtResource("1_52wss")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uv15a"]
-atlas = ExtResource("1_52wss")
-region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o750o"]
 atlas = ExtResource("2_cx6us")
@@ -495,12 +480,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_stm4w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_su7oo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uv15a")
 }],
 "loop": 1,
 "name": &"attack_1",
@@ -1388,7 +1367,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -674.0
+offset_left = -1933.0
 offset_top = -90.0
 offset_right = 473.0
 offset_bottom = 90.0
@@ -1400,25 +1379,25 @@ stretch_mode = 1
 [node name="StaticBody2D" type="StaticBody2D" parent="TextureRect" unique_id=306638368]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D" unique_id=495666103]
-position = Vector2(2, 0)
+position = Vector2(-209.4812, 0)
+scale = Vector2(2.53125, 1)
 build_mode = 1
 polygon = PackedVector2Array(141, 0, 139, 151, 967, 158, 967, -3)
 
 [node name="Adventurer" type="CharacterBody2D" parent="." unique_id=1081347773]
-position = Vector2(-494, 28)
+position = Vector2(-1759, 33)
 script = ExtResource("2_xtrln")
 
 [node name="female" type="AnimatedSprite2D" parent="Adventurer" unique_id=109059461]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0t50")
-animation = &"running"
-frame_progress = 0.4694817
+animation = &"attack_1"
 
 [node name="male" type="AnimatedSprite2D" parent="Adventurer" unique_id=1367438716]
 visible = false
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mypsj")
-animation = &"jump"
+animation = &"attack_1"
 
 [node name="Collision" type="CollisionShape2D" parent="Adventurer" unique_id=371794376]
 position = Vector2(-1, -1)

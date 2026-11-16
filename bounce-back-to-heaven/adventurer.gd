@@ -6,10 +6,10 @@ extends CharacterBody2D
 const SPEED = 120.0
 const JUMP_VELOCITY = -325.0
 
+#WHICH ADVENTURER IS BEING USED
 func male_adventurer() -> void:
 	male.visible = true
 	female.visible = false
-	
 func female_adventurer() -> void:
 	female.visible = true
 	male.visible = false
@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		
 		female.flip_h = direction <0 
 		male.flip_h = direction <0
 		
@@ -44,3 +45,14 @@ func _physics_process(delta: float) -> void:
 		male.frame=4
 
 	move_and_slide()
+	
+#ATTACKING
+func floor_attack() -> void:
+	if Input.is_action_just_pressed("click") and is_on_floor():
+		female.play("attack_1")
+		male.play("attack_2")
+
+func air_attack() -> void:
+	if Input.is_action_just_pressed("click") and not is_on_floor():
+		female.play("attack_2")
+		male.play("attack_1")
